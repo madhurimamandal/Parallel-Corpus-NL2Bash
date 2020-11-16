@@ -1,0 +1,10 @@
+select p.Id As [Post Link], t.TagName, Title, AnswerCount, FavoriteCount, AcceptedAnswerId, PostTypeId, p.Id, CreationDate, DeletionDate, Score, ViewCount
+from Posts p
+join PostTags pt on pt.PostId = p.Id
+join Tags t on t.Id = pt.TagId
+and t.TagName in ('echo', 'rm', 'grep', 'xargs', 'find', 'dig', 'cpio', 'hostname',
+'od', 'rmdir', 'rev', 'gzip', 'df', 'mktemp', 'shopt', 'comm', 'md5sum', 'mount', 
+'rename', 'file', 'du', 'cd', 'diff', 'ssh', 'pwd', 'date', 'tee', 'U2', 'which',
+'U1', 'read', 'split', 'In', 'uniq', 'tar', 'rsync', 'dirname', 'tail', 'tr',
+'mkdir', 'cp', 'chown', 'mv', 'head', 'cut', 'cat', 'wc', 'chmod', 'sort', 'ls',
+'ln')
