@@ -1,0 +1,14 @@
+select p.Id As [Post Link], t.TagName, Title, AnswerCount, FavoriteCount, AcceptedAnswerId, PostTypeId, p.Id, CreationDate, DeletionDate, Score, ViewCount
+from Posts p
+join PostTags pt on pt.PostId = p.Id
+join Tags t on t.Id = pt.TagId
+and t.TagName in ('dig', 'wget', 'zless', 'clear', 'bunzip2', 'fg', 
+'bg', 'info', 'apropos', 'shred', 'sleep',
+'finger', 'md5', 'su', 'w', 'sh', 'man', 'groups', 
+'curl', 'ps', 'top', 'ssh-keygen', 'compress',
+'cal', 'jobs', 'watch', 'who', 'bind', 'pstree', 'tac', 
+'crontab', 'kill', 'scp', 'gunzip', 'column',
+'zcat', 'if', 'env', 'ifconfig', 'pip', 'pip3', 
+'conda', 'fold', 'uname', 'history', 'seq', 'ping',
+'tree', 'bzip2', 'touch', 'paste', 'yes', 
+'chgrp', 'join', 'whoami', 'sudo')
